@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon X/O Cyber Game</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Background Matrix Digital Rain Layer -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- Initial Boot Splash Screen -->
+  <div id="boot-splash-screen" class="screen">
+    <div class="boot-container">
+      <h1 class="studio-logo">GAMEDROP</h1>
+      <p class="boot-subtext">LOADING SYSTEM KERNEL...</p>
+      <div class="progress-bar-container">
+        <div id="boot-progress-fill" class="progress-fill"></div>
+      </div>
+      <span id="boot-percentage" class="boot-percent-text">0%</span>
+    </div>
+  </div>
+
+  <!-- Home Configuration Matrix -->
+  <div id="home-screen" class="screen">
+    <div class="glow-logo">
+      <h1>NEON X/O</h1>
+      <p>SECURE TERMINAL ACCESSED</p>
+    </div>
+
+    <div class="options-container">
+      <div class="option-group">
+        <span class="option-label">GAME MODE</span>
+        <div class="toggle-buttons">
+          <button id="mode-ai" class="btn-toggle active">VS AI</button>
+          <button id="mode-pvp" class="btn-toggle">MULTIPLAYER</button>
+        </div>
+      </div>
+
+      <div class="option-group">
+        <span class="option-label">IDENTITY CODES (NAMES)</span>
+        <div class="input-wrapper">
+          <input type="text" id="name-p1" placeholder="PLAYER NAME" value="PLAYER 1" maxlength="10">
+          <input type="text" id="name-p2" placeholder="PLAYER 2 NAME" value="PLAYER 2" class="hide" maxlength="10">
+        </div>
+      </div>
+
+      <div class="option-group">
+        <span class="option-label">TOURNAMENT LENGTH</span>
+        <div class="toggle-buttons">
+          <button id="match-single" class="btn-toggle active">1 MATCH</button>
+          <button id="match-bo3" class="btn-toggle">BEST OF 3</button>
+          <button id="match-bo5" class="btn-toggle">BEST OF 5</button>
+        </div>
+      </div>
+
+      <div id="difficulty-group" class="option-group">
+        <span class="option-label">AI DIFFICULTY</span>
+        <div class="toggle-buttons">
+          <button id="diff-easy" class="btn-toggle">EASY</button>
+          <button id="diff-medium" class="btn-toggle">MEDIUM</button>
+          <button id="diff-hard" class="btn-toggle active">HARD</button>
+        </div>
+      </div>
+    </div>
+
+    <button id="start-game-btn" class="btn-neon-blue">PLAY</button>
+  </div>
+
+  <!-- Simulated Loading Stream -->
+  <div id="loading-screen" class="screen hide">
+    <div class="loader-content">
+      <div class="spinner"></div>
+      <div class="loading-text" id="loading-text">INITIALIZING QUANTUM GRID...</div>
+    </div>
+  </div>
+
+  <!-- Combat Interface Canvas -->
+  <div id="game-screen" class="game-container hide">
+    <header>
+      <h1>NEON X/O</h1>
+      <div id="tournament-goal" class="tournament-goal-text">FIRST TO 1 WIN</div>
+      <div class="score-board">
+        <div class="score-card text-neon-blue">
+          <span id="label-x" class="label">PLAYER 1 (X)</span>
+          <span id="score-x" class="score">0</span>
+          <div id="trophies-x" class="trophy-row"></div>
+        </div>
+        <div class="score-card text-neon-pink">
+          <span id="label-o" class="label">AI (O)</span>
+          <span id="score-o" class="score">0</span>
+          <div id="trophies-o" class="trophy-row"></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="status-wrapper">
+      <div class="status-msg" id="status">YOUR TURN</div>
+      <!-- Timer Bar Integration -->
+      <div id="timer-bar-container" class="timer-container">
+        <div id="timer-bar-fill" class="timer-fill"></div>
+      </div>
+    </div>
+
+    <div class="board" id="board">
+      <div class="cell" data-index="0"></div>
+      <div class="cell" data-index="1"></div>
+      <div class="cell" data-index="2"></div>
+      <div class="cell" data-index="3"></div>
+      <div class="cell" data-index="4"></div>
+      <div class="cell" data-index="5"></div>
+      <div class="cell" data-index="6"></div>
+      <div class="cell" data-index="7"></div>
+      <div class="cell" data-index="8"></div>
+    </div>
+
+    <div class="game-actions">
+      <button class="btn-reset" id="reset-btn">REPLAY</button>
+      <button class="btn-reset btn-back" id="back-btn">MAIN MENU</button>
+    </div>
+  </div>
+
+  <canvas id="particle-canvas"></canvas>
+
+</body>
+</html>
