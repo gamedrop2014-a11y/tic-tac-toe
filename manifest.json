@@ -1,0 +1,16 @@
+{
+  "name": "Neon Tic Tac Toe",
+  "short_name": "TicTacToe",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00ffff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://unsplash.com",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
